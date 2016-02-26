@@ -1,0 +1,98 @@
+//
+//  DoctorsOnDemandCode-Prefix.pch
+//  DoctorsOnDemandCode
+//
+//  Created by GBS-ios on 8/22/15.
+//  Copyright (c) 2015 GLB-163. All rights reserved.
+//
+
+
+
+#import <Availability.h>
+#define QB_RTC_SAMPLE_MODE 0
+
+#if (QB_RTC_SAMPLE_MODE == 0)
+#define QB_VERSION_STR @"release"
+#elif (QB_RTC_SAMPLE_MODE == 1)
+#define QB_VERSION_STR @"dev"
+#elif (QB_RTC_SAMPLE_MODE == 2)
+#define QB_VERSION_STR @"qa"
+#elif (QB_RTC_SAMPLE_MODE == 3)
+#define QB_VERSION_STR @"android"
+#endif
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <Quickblox/Quickblox.h>
+
+
+#if (QB_RTC_SAMPLE_MODE == 1)
+
+#import "QBRTCTypes.h"
+#import "QBGLVideoView.h"
+#import "QBRTCVideoTrack.h"
+#import "QBRTCClient.h"
+#import "QBRTCClientDelegate.h"
+#import "QBRTCSession.h"
+#import "QBRTCConfig.h"
+#import "QBICEServer.h"
+#import "QBSoundRouter.h"
+#import "QBBackgroundTimer.h"
+
+FOUNDATION_EXPORT NSString *const QuickbloxWebRTCFrameworkVersion;
+FOUNDATION_EXPORT NSString *const QuickbloxWebRTCRevision;
+
+#else
+#import <QuickbloxWebRTC/QuickbloxWebRTC.h>
+#endif
+
+#endif
+
+#define singInService  @"http://api.dod.globusapps.com/login"
+#define signUpservice  @"http://api.dod.globusapps.com/register"
+#define fetchScheduleService @"http://api.dod.globusapps.com/fetchAllDoctorScheduleByDepartment"
+//#define doctorsSchedule @"http://api.dod.globusapps.com/fetchdoctorschedule"
+#define doctorsSchedule @"http://api.dod.globusapps.com/fetchFreeDoctorAppointment"
+//#define makeAppointmentService @"http://api.dod.globusapps.com/makeappointment"
+#define makeAppointmentService @"http://api.dod.globusapps.com/scheduleAppointment"
+#define fetchDoctorsByTimeService @"http://api.dod.globusapps.com/fetchAllFreeDoctorBySchedule"
+#define applyCouponService @"http://api.dod.globusapps.com/activatecoupon"
+#define showPharmacyService @"http://api.dod.globusapps.com/showpharmacies"
+#define appointmentPaymentService @"http://api.dod.globusapps.com/paymentdata"
+#define departmentDoctorsService @"http://api.dod.globusapps.com/departmentdoctors"
+#define createChildService @"http://api.dod.globusapps.com/createchild"
+#define fetchChildService @"http://api.dod.globusapps.com/fetchchild"
+#define forgotPasswordService @"http://api.dod.globusapps.com/forgetPassword"
+#define updatePatientProfile @"http://api.dod.globusapps.com/editProfilePatient"
+#define fetchPatientProfile @"http://api.dod.globusapps.com/patientdetails"
+#define patientMetaService @"http://api.dod.globusapps.com/patientsmeta"
+#define searchPharmacyService @"http://api.dod.globusapps.com/select-pharmacy"
+#define fetchFavPharmacyService @"http://api.dod.globusapps.com/view-favourite-pharmacies"
+#define addPharmacyFavoriteService @"http://api.dod.globusapps.com/add-pharmacy-to-favourite-list"
+#define deleteFavoritePharmacyService @"http://api.dod.globusapps.com/remove-fav-pharmacies"
+#define pharmNearByService @"http://api.dod.globusapps.com/MapPharmacies"
+//#define autoAllocateDoctorServie  @"http://api.dod.globusapps.com/autoallocatedoctor"
+#define seeDocNowService @"http://api.dod.globusapps.com/see-a-medical-doctor-now"
+#define doctorCallCostService @"http://api.dod.globusapps.com/getusercallcost"
+#define supportService @"http://api.dod.globusapps.com/insertsupport"
+#define getAppointmentDetails @"http://api.dod.globusapps.com/patient-appointment-history"
+#define fetchQuickBloxDetails @"http://api.dod.globusapps.com/call-doctorwithplanid5"
+#define updatePassword @"http://api.dod.globusapps.com/savePatientPassword"
+#define reviewRatingService @"http://api.dod.globusapps.com/seeDoctorNowRatings"
+#define addFavProviderService @"http://api.dod.globusapps.com/addfavouriteProvider"
+#define fecthFavProviderService @"http://api.dod.globusapps.com/getFavouriteProviders"
+#define deleteFavProviderService @"http://api.dod.globusapps.com/removefavouriteProvider"
+#define businessService @"http://api.dod.globusapps.com/business"
+#define appointmentHistory @"http://api.dod.globusapps.com/patient-visit-history"
+#define newAutoAllocateDoc @"http://api.dod.globusapps.com/autoAllocateMedicalDoctor"
+#define getTransactionIDService @"http://api.dod.globusapps.com/getPaymentDetails"
+#define bussinessReferalCoupon @"http://api.dod.globusapps.com/activatebusinessreferral"
+#define checkSeeDocNowScheduleService @"http://api.dod.globusapps.com/autoAllocateMedicalDoctorCheck"
